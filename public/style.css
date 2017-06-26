@@ -1,0 +1,718 @@
+/*index Generic things*/
+
+html, body{
+    min-height: 120%;
+}
+
+#title {
+    font-family: 'Permanent Marker', cursive;
+}
+
+#sub-title {
+    font-family: 'Coming Soon', cursive;
+}
+
+.form-container  {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+}
+
+.form-container p{
+    margin-top: 0;
+    margin-bottom: 22px;
+}
+
+
+
+
+body {
+    background: #CC95C0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #7AA1D2, #DBD4B4, #CC95C0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.error-message{
+    color : red;
+    position: relative;
+    top : 8px;
+}
+
+#register-title, #login-title {
+    text-decoration: underline;
+}
+
+
+
+/*Nav Bar*/
+
+#li-container {
+    z-index: 1000;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    right: 20%;
+    position: absolute;
+    list-style-type: none;
+    top: 5px;
+}
+
+#search-input{
+    top: 4px;
+    left: 21%;
+    width: 150px;
+    transform: translate(-50%);
+    z-index: 10000000000;
+    position: relative;
+    display: inline;
+    list-style-type: none;
+}
+
+
+
+#search-image{
+
+    width: 25px;
+    z-index: 100;
+    margin-left: 20px;
+    top: 7px;
+    position: relative;
+
+}
+
+#li-container li{
+    width: 100%;
+    padding-left: 12%;
+}
+
+#li-container li:nth-child(-n+2){
+    border-right: 1px black solid;
+}
+
+#li-container li a{
+    font-family: 'Poiret One', cursive;
+    text-decoration: none;
+    color: black;
+    font-size: 18px
+}
+
+#li-container li a:hover {
+    color : darkgrey
+}
+
+#nav-bar-container{
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 62px;
+    top: 0px;
+    right: 0;
+    /* color: aquamarine; */
+    left: 0;
+    background: white;
+    opacity: 0.9;
+    display: flex;
+}
+
+#menu{
+    position: absolute;
+    left: 47%;
+    top: 21px;
+}
+
+.menu-link{
+    margin: 22px;
+    font-family: 'Poiret One', cursive;
+    color: black;
+}
+
+.menu-link:hover{
+    color : green
+}
+
+
+
+/*Welcome / registration page*/
+
+#big-logo .logo-container{
+    top: 0px;
+    position: relative;
+    left : 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+}
+
+#big-logo #title {
+    color : black;
+    font-size : 70px;
+    margin-top: 0;
+}
+
+#big-logo #logo-image{
+    position: relative;
+    width :23%;
+}
+
+#big-logo #sub-title {
+    color :black;
+    font-size : 35px;
+}
+
+
+#presentation-text {
+    font-family: 'Poiret One', cursive;
+    text-align: center;
+    position: relative;
+    background : white;
+    font-weight: 600;
+    padding: 15px;
+    font-size: 20px;
+}
+
+
+#presentation-text ul {
+    list-style-type: none;
+    padding: 0;
+}
+#presentation-text ul li{
+    list-style-type: none;
+    text-align: center;
+}
+
+/*tiny logo page*/
+
+#tiny-logo .logo-container{
+    position: fixed;
+    top: 0;
+}
+
+#wrap-profilepic-profilemenu{
+    position: absolute;
+    z-index: 2;
+    top: 5px;
+    left: 81%;
+}
+
+#profile-menu {
+    background: white;
+    border: 1px black solid;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    width: 110px;
+    top: 49px;
+    right: -78%;
+    position: absolute;
+}
+
+#profile-menu ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+#profile-menu li {
+    text-align: center;
+    padding: 11px;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    position: relative;
+    top: -10px;
+    left: 15px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid black;
+    border-radius: 2px;
+}
+
+
+#profile-picture-container{
+    right: 34%;
+    width: 48px;
+    position: relative;
+    overflow: hidden;
+    height: 48px;
+    border: 1px solid black;
+    border-radius: 16px;
+}
+
+#profile-picture {
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+#upload-profile-picture {
+    position: absolute;
+    display: none;
+    text-align: center;
+    right: -50%;
+    transform: translate(-50%);
+    font-family: 'Poiret One', cursive;
+    width: 48px;
+    overflow: hidden;
+    height: 48px;
+    margin: 0;
+    top: 4px;
+}
+
+#input-file {
+    position: absolute;
+    top: -994px;
+}
+
+#upload-image-button{
+    border : 1px solid darkgrey;
+    border-radius : 4px;
+    padding: 10px;
+    top: 7px;
+    position: relative;
+
+}
+
+#upload-image-button:hover{
+    background: rgb(242, 285, 248);
+
+}
+
+#welcome{
+    position: relative;
+    text-align: center;
+    top: 79px;
+    font-family: 'Poiret One', cursive;
+    padding-top: 10px;
+    border-top: 1px black solid;
+    width : 300px;;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 27px;
+}
+
+#profile-picture-container:hover #upload-profile-picture {
+    display: block;
+
+}
+
+#profile-picture-container:hover img {
+    opacity: 0.3;
+    filter: grayscale(1);
+}
+
+#profile-pic-upload-container{
+    overflow-y: auto;
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, .7);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+#else-overlay{
+    z-index: 1000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    top: -10px;
+    left: -10px;
+    right: -9px;
+}
+
+
+
+#profile-pic-upload {
+    font-family: 'Poiret One', cursive;
+    background: white;
+    position: absolute;
+    z-index: 10000;
+    text-align: center;
+    width: 60%;
+    left: 20%;
+    border-radius: 4px;
+    top: 100px;
+    border: 1px black dotted;
+    padding: 10px 0px 30px 0px;
+    margin-bottom: 5%;
+}
+
+
+
+#preview-image {
+    position: relative;
+    margin-top: 35px;
+    max-width: 87%;
+}
+
+#cross-image-upload {
+    position: relative;
+    width: 20px;
+    right : -45%;
+}
+
+
+.profile-menu-link {
+    font-size: 15px;
+    font-family: 'Poiret One', cursive;
+    text-decoration: underline;
+    color:black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.profile-menu-link:hover{
+    background: rgb(167, 198, 145);
+    color : black;
+}
+
+#tiny-logo #title { order: 2; }
+#tiny-logo #logo-image { order: 1; }
+#tiny-logo #sub-title { order: 3; }
+
+#tiny-logo #title {
+    position: fixed;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 16px;
+    right: 3%;
+    top: -1px;
+
+}
+
+#tiny-logo #sub-title {
+    position: fixed;
+    font-family: 'Coming Soon', cursive;
+    font-size: 12px;
+    right: 3%;
+    top : 19px;
+}
+
+#tiny-logo #logo-image{
+    position: fixed;
+    width: 35px;
+    top: 12px;
+    left: 3%;
+}
+
+
+
+/*Profile page */
+
+#profile-page-container {
+    position: relative;
+
+    top: 105px;
+    width: 80%;
+    left: 10%;
+    padding: 25px;
+    border-top: black 1px solid;
+}
+
+#profile-page-container #image {
+    position: relative;
+    max-width: 25%;
+    min-width: 230px;
+    float: left;
+}
+
+#profile-page-container #bio {
+    float: left;
+    font-family: 'Poiret One', cursive;
+    display: inline-block;
+    margin-left: 20px;
+
+}
+
+#profile-page-container #bio a{
+    display: block;
+    margin-top: 16px;
+}
+
+#profile-page-container #name {
+    font-family: 'Poiret One', cursive;
+    display: inline-block;
+    margin-left: 15px;
+
+}
+
+#profile-page-container #textarea-bio {
+    float: left;
+    margin-left: 15px;
+
+}
+
+#profile-page-container #button {
+    text-decoration: underline;
+    color: darkgrey
+}
+
+
+#profile-page-container #button:hover {
+    background: green;
+    color:white;
+}
+
+#profile-page-container #submit-button {
+    display: block;
+}
+
+#profile-page-container #submit-button {
+    display: block;
+}
+
+#profile-page-container #submit-button-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+#profile-page-container #image-container {
+    position: relative;
+    max-width: 25%;
+    min-width: 230px;
+    float: left;
+
+}
+#profile-page-container #image-overlay {
+    position: relative;
+    max-width: 25%;
+    min-width: 230px;
+    float: left;
+
+}
+
+#image-container:hover #image-overlay {
+    background: black;
+    opacity: 0.15;
+}
+
+#image-container #upload-text {
+    position: absolute;
+    top: 82px;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: 'Poiret One', cursive;
+    display: none;
+}
+
+#image-container:hover #upload-text {
+    display: inline;
+    font-size: 20px;
+}
+
+.no-user-url {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Poiret One', cursive;
+}
+
+
+/*Friend page*/
+
+#waitingForAnwser-container, #frToAccept-container, #frConfirmed-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    left: -5%;
+}
+
+.friend-request {
+    margin-left: 10%;
+}
+
+#fr-title{
+    font-family: 'Poiret One', cursive;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 59px;
+    padding-top: 20px;
+    border-top: 1px black solid;
+    width: 20%;
+    left: 40%;
+    position: relative;
+
+}
+
+.friend-image{
+    width: 180px;
+}
+
+
+.accept-button, .cancel-button{
+    border: 1px black solid;
+    left: 50%;
+    position: relative;
+    background: white;
+    transform: translate(-50%);
+    font-family: 'Poiret One', cursive;
+}
+
+.accept-button:hover, .cancel-button:hover{
+    background:  darkgrey;
+    color: white;
+}
+
+.friend-name{
+    text-align: center;
+    margin: 7px;
+    font-family: 'Poiret One', cursive
+}
+
+/*Online page*/
+
+#online-page{
+    position: relative;
+    top: 102px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#online-icon{
+    position: relative;
+    width: 21px;
+    top: -152px;
+    right: -28px;
+}
+
+
+
+/*This are the search results*/
+#nav-bar-results-container{
+
+    left: 50%;
+    background: white;
+    border: black 1px solid;
+    transform: translate(-50%);
+    width: 203px;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 30px;
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+    top: 50px;
+}
+
+.search-results-container .search-image{
+    width: 38px;
+    top: 65px;
+    margin: 6px 8px 0px 6px;
+}
+
+.search-results-container  .search-name{
+    font-family: 'Poiret One', cursive;
+    margin-left: 12px;
+}
+
+.search-results-container{
+    display: -webkit-inline-box;
+    width: 203px;
+}
+
+.search-message{
+    font-family: 'Poiret One', cursive;
+    position: relative;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+
+#close-search{
+    width: 20px;
+    position: absolute;
+    bottom : 3px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+
+
+
+/*chat page*/
+
+#chat-container {
+    position: relative;
+    top: 100px;
+    background: white;
+    border: 1px dotted green;
+    width: 80%;
+    left: 10%;
+}
+
+#text-container {
+    top: -9px;
+    position: relative;
+    width: 83%;
+    height: 95px;
+}
+
+#message-container{
+    height: 500px;
+    overflow: scroll;
+}
+
+.message-request{
+    display: flex;
+    margin: 10px;
+    font-family: 'Poiret One', cursive;
+}
+
+.message-image{
+    width: 62px;
+    min-height: 62px;
+    height: 100%;
+}
+
+.message-content{
+    position: relative;
+    left: 90px;
+    top: -50px;
+    font-family: helvetica;
+    width: 84%;
+    text-align: justify;
+}
+
+.message-date, .message-name{
+    position: relative;
+    top:-17px;
+    margin-left: 10px;
+}
+
+
+.message-date{
+    font-style: italic;
+    font-size: 10px;
+    top : -6px;
+}
+
+#comment-container {
+    background: white;
+    position: relative;
+    top: 112px;
+    width: 80%;
+    left: 10%;
+    border: 1px black dotted;
+}
+
+#user-image{
+    left: 2px;
+    top: 2px;
+    height: 101px;
+    margin: 10px;
+    /* position: relative; */
+    position: relative;
+}

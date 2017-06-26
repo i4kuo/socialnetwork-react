@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///Users/Mathieu/DEV/spiced/music/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title></title>
+    </head>
+    <body>
+        <h1>test</h1>
+
+        <script>
+        Play = (function() {
+
+  var ctx = new(AudioContext || webkitAudioContext);
+
+  return function(duration, freq, finishedCallback) {
+    duration = +duration;
+    if (typeof finishedCallback != "function") {
+      finishedCallback = function() {};
+    }
+    var osc = ctx.createOscillator();
+    osc.type = "square";
+    osc.connect(ctx.destination);
+    osc.frequency.value = freq;
+
+    if (osc.start) osc.start();
+    else osc.noteOn(0);
+
+    setTimeout(
+      function() {
+        if (osc.stop) osc.stop(0);
+        else osc.noteOff(1);
+        finishedCallback();
+      }, duration
+    );
+  };
+})();
+Play(100000, 100);
+Play(100000, 200);
+Play(100000, 400);
+Play(100000, 800);
+Play(100000, 497);
+
+        </script>
+
+    
+
+</body></html>
