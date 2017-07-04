@@ -1,5 +1,5 @@
 import {Link} from 'react-router';
-import React from 'React';
+import React from 'react';
 import Welcome from '../welcome';
 import axios from '../../axios';
 

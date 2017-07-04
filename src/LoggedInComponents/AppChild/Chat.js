@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import {Link} from 'react-router';
 import axios from '../../axios';
 import {getSocket} from '../../Socket'
