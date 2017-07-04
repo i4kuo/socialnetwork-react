@@ -7,7 +7,7 @@ import React from 'react';
 // import axios from './axios';
 //
 //
-// import Welcome from './LoggedOutComponents/welcome.js';
+import Welcome from './LoggedOutComponents/welcome.js';
 //
 // import Registration from './LoggedOutComponents/WelcomeChild/registerform';
 // import Login from './LoggedOutComponents/WelcomeChild/loginform';
