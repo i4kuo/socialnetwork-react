@@ -35,11 +35,12 @@ export default class Online extends React.Component {
             console.log(resp.data.users, "component did mount, list of online users");
             this.setState({users : resp.data.users});
 
-        })
+        });
     }
 
     renderOnlineUsers(){
         return this.state.users.map(function(user){
+            console.log(user.image);
             return (
                 <div className="friend-request">
                     <img id="online-icon" src="/online.svg"/>

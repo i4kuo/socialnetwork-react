@@ -3,6 +3,7 @@ const db = require('../config/database');
 const auth = require('../config/authentification');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const client = require('../config/s3');
 
 
 
@@ -100,6 +101,7 @@ router.route('/getUserFriends')
 
             results.forEach(function(result){
                 var userUrl ="";
+                result.image = `https://s3.amazonaws.com/social-net/${result.image}`;
                 userUrl =  `user/${result.id}`
                 result["userUrl"] = userUrl;
                 if(result.status == "confirmed"){

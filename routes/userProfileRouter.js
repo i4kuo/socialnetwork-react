@@ -4,6 +4,8 @@ const auth = require('../config/authentification');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
+//const client = require('../config/s3');
+const s3 = require('../config/s3');
 
 
 
@@ -31,9 +33,11 @@ var uploader = multer({
 router.route('/myProfile')
 
     .get( (req, res) => {
+
         db.getUserInfo(req.session.user.id)
 
         .then(function(results){
+            results.image = `https://s3.amazonaws.com/social-net/${results.image}`;
             let { last_name, first_name, image, bio, id} = results;
             res.json({ last_name, first_name, image, bio, id })
         })
@@ -45,24 +49,28 @@ router.route('/myProfile')
     });
 
 
+let imageNameToStoreInTheDatabase;
+
 
 router.route('/uploadImageFromReactBeforeConfirm')
 
-    .post(uploader.single('file'), (req, res) => {
+    .post(uploader.single('file'), s3.toS3, (req, res) => {
         console.log("here!!!!!!");
+        console.log("1", req.file.filename);
+        imageNameToStoreInTheDatabase = req.file.filename
         res.json({
             success : true,
-            file : "/uploads/" + req.file.filename
+            file : `https://s3.amazonaws.com/social-net/${req.file.filename}`
         })
     });
-
 
 
 router.route('/uploadImageFromReact')
 
     .post(  uploader.single('file'), (req, res) => {
+        console.log("2", imageNameToStoreInTheDatabase);
 
-        var fileName = "/uploads/" + req.file.filename;
+        var fileName = imageNameToStoreInTheDatabase;
         var userId = req.session.user.id;
 
         if (req.file) {
@@ -70,6 +78,7 @@ router.route('/uploadImageFromReact')
             db.updateImage(userId, fileName)
 
             .then(function(results){
+                results.image = `https://s3.amazonaws.com/social-net/${results.image}`;
                 res.json({
                     success : true,
                     file : results.image

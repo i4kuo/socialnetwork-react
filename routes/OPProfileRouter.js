@@ -3,6 +3,7 @@ const db = require('../config/database');
 const auth = require('../config/authentification');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const client = require('../config/s3');
 
 
 
@@ -17,6 +18,7 @@ router.route('/OPProfile')
         db.getUserInfo(req.query.id)
         .then(function(results){
 
+            results.image = `https://s3.amazonaws.com/social-net/${results.image}`;
             let { last_name, first_name, image, bio, id} = results;
 
             db.getFriendshipStatus(req.query.id, req.session.user.id)
@@ -72,6 +74,7 @@ router.route('/resultsSearchInput')
         db.checkSearchInput(req.query.query)
         .then(function(results){
             results.forEach(function(user){
+                user.image = `https://s3.amazonaws.com/social-net/${user.image}`;
                 var userUrl = "";
                 userUrl =  `user/${user.id}`;
                 user["userUrl"] = userUrl;

@@ -1,6 +1,8 @@
 var express = require('express'), router = express.Router();
 const db = require('../config/dbGeneral.js');
 const auth = require('../config/auth.js');
+const client = require('../config/s3');
+
 
 router.route('/registerNewUser')
 

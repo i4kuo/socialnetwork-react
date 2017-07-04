@@ -228,19 +228,11 @@ function cancelFriendRequest(userId, OPId){
 
 function getOnlineUsers(usersId){
     // look at the db.js line 243 of enrique project, with the ANY.
-    // var newArray = [];
-    // usersId.forEach(function(currentValue, index){
-    //     newArray.push(currentValue)
-    // })
 
     const q = `SELECT users.id, first_name, last_name, image
-    FR["userIdOM users
+    FROM users
     WHERE id
     IN(${usersId})`
-    // Where id= any($1)
-
-    //const params = [newArray];
-    //console.log(params);
 
     return db.query(q).then(function(results){
         return results.rows;

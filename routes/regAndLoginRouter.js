@@ -66,7 +66,7 @@ router.route('/registerUser')
         var lastName = req.body.last;
         var email = req.body.email;
         var plainTextPassword = req.body.password;
-        var image = "http://www.crown-church.org.uk/images/member_photos/default_user.jpg"
+        var image = "default-user.png"
 
         if (plainTextPassword.length < 5){
             return res.json({
