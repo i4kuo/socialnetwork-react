@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from '../../axios';
-import NavBar from '../Siblings/navBar';
+import NavBar from '../Siblings/navbar';
 import Logo from '../../Logo';
 import {Link} from 'react-router';
 import {getSocket, UpdateUser} from '../../Socket'
