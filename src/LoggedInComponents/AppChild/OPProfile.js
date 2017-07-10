@@ -87,13 +87,13 @@ export default class OPProfile extends React.Component {
     }
 
     render(){
+        console.log("state 2", this.state);
+        console.log("props", this.props);
         let bio = "";
-        if(!this.state.bio){
-            if(!this.props.bio){
-                bio = <p id="bio">There is no bio!</p>
-            }else {
-                bio = <p id="bio">{this.state.bio}</p>
-            }
+        if(this.state.bio){
+            bio = <p id="bio"><em>"{this.state.bio}"</em></p>
+        }else {
+            bio = <p id="bio">There is no bio!</p>
         }
         let status = "";
         if(this.state.usersNotFriends){
@@ -133,11 +133,11 @@ export default class OPProfile extends React.Component {
 
 
             <h2 id="name">{this.state.last_name} {this.state.first_name}</h2>
-            {status}
-
             <div id="bio-container">
             {bio}
             </div>
+            {status}
+
             </div>
         )
     }

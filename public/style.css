@@ -449,15 +449,15 @@ body {
 }
 
 #profile-page-container #bio {
-    float: left;
+    margin-left: 20px;
     font-family: 'Quicksand', cursive;
     display: inline-block;
+    width: 350px;
 }
 
 #profile-page-container #bio a{
     margin-top: 16px;
-    display: block;
-    margin-left: 18px;
+    display: -webkit-inline-box;
 }
 
 
@@ -908,6 +908,11 @@ body {
     display: inline-block;
 }
 
+#OP-friending{
+    display: inline-block;
+    margin-left: 20px;
+}
+
 
 
 
@@ -922,11 +927,6 @@ body {
         margin-top: 10px;
         margin-left: 0px;
     }
-}
-
-#OP-friending{
-    position: relative;
-    left: 22px;
 }
 
 @media all and (max-width: 860px) and (min-width: 10px) {
@@ -955,7 +955,6 @@ body {
         display: flex;
         flex-flow: column wrap;
         justify-content: center;
-        align-items: center;
         position: relative;
         top: 66px;
         padding: 0;
@@ -993,14 +992,28 @@ body {
 
     #profile-page-container #bio, #image-container #name{
         margin-left: 0;
+        text-align: center;
+    }
+    #bio-container #button {
+        text-align: left;
     }
 
     #OP-friending{
-        left: 0;
+        margin-left: 0;
     }
 
     #profile-page-container #bio a{
         margin-left: 0;
+    }
+
+    #profile-page-container #name, #profile-page-container #image-container, #profile-page-container #image  {
+        left: 50%;
+        display: inline-block;
+        position: relative;
+        transform: translate(-50%);
+    }
+    #profile-page-container #image-container, #profile-page-container #image {
+        margin-top: 20px;
     }
 
 }
@@ -1009,9 +1022,6 @@ body {
     #tiny-logo #title, #tiny-logo #sub-title{
         display: none;
     }
-    /*#welcome-background{
-        height: 100vh;
-    }*/
     #user-image{
         display: none;
     }
@@ -1040,4 +1050,16 @@ body {
     #bio-field{
         width: 98%;
     }
+
+    #profile-page-container #bio {
+        width: initial;
+    }
+
+    #profile-page-container{
+        width: 100%;
+        left: 0;
+        padding: 0;
+    }
+
+
 }

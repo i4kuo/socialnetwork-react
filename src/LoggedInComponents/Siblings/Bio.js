@@ -68,7 +68,7 @@ export default class Bio extends React.Component {
             if(!this.props.bio){
                 bio = <p id="bio"><a id="button" onClick={this.handleEditBio.bind(this)}>Add your bio now</a></p>
             }else {
-                bio = <p id="bio"> <em>"{this.props.bio}"</em><a id="button" onClick={this.handleEditBio.bind(this)}>Edit it ?</a></p>
+                bio = <p id="bio"> <em>"{this.props.bio}"</em><br/><a id="button" onClick={this.handleEditBio.bind(this)}>Edit it ?</a></p>
             }
         }
 
