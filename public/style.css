@@ -1015,6 +1015,19 @@ body {
     #profile-page-container #image-container, #profile-page-container #image {
         margin-top: 20px;
     }
+    #profile-page-container #textarea-bio{
+        float: none;
+        margin-left: 0;
+    }
+
+    #profile-page-container #submit-button-container{
+        justify-content: center;
+    }
+    #profile-page-container #submit-button-container input{
+        margin : 0 15px 0 15px;
+    }
+
+
 
 }
 

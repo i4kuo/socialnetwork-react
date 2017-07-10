@@ -87,8 +87,6 @@ export default class OPProfile extends React.Component {
     }
 
     render(){
-        console.log("state 2", this.state);
-        console.log("props", this.props);
         let bio = "";
         if(this.state.bio){
             bio = <p id="bio"><em>"{this.state.bio}"</em></p>
