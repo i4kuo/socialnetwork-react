@@ -9,9 +9,10 @@ Social Network - Fullstack project, using React.js, where user can create an acc
 
 ## Details
 
-	- React js framework for making a single page application, using the philosophy of React to render different views as the user profile page, some other others profile pages.
-	- Clear and easy UI experience.
-	- Node js on server-side, using PostgreSQL database.
+	<ul>
+	<li>React js framework for making a single page application, using the philosophy of React to render different views as the user profile page, some other others profile pages.</li>
+	<li>Clear and easy UI experience.</li>
+	<li>Node js on server-side, using PostgreSQL database.</li></ul>
 	
 
 Working on this project help me to consolidate my knowledge about databases (PostgreSQL), server site routes, queries, use of middleware as "body parser" or "multer", but I really learnt a lot about React.
