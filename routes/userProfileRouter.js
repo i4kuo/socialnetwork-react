@@ -54,7 +54,7 @@ let imageNameToStoreInTheDatabase;
 
 router.route('/uploadImageFromReactBeforeConfirm')
 
-    .post(uploader.single('file'), s3.toS3, (req, res) => {
+    .post(s3.toS3, (req, res) => {
         imageNameToStoreInTheDatabase = req.file.filename
         res.json({
             success : true,
@@ -65,7 +65,7 @@ router.route('/uploadImageFromReactBeforeConfirm')
 
 router.route('/uploadImageFromReact')
 
-    .post(  uploader.single('file'), (req, res) => {
+    .post((req, res) => {
         var fileName = imageNameToStoreInTheDatabase;
         var userId = req.session.user.id;
 

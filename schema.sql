@@ -19,4 +19,4 @@ CREATE TABLE friend_request (
     status VARCHAR(30) NOT NULL,
     create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP
-)
+);
