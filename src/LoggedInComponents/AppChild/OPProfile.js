@@ -16,15 +16,11 @@ export default class OPProfile extends React.Component {
         axios
         .get(`/OPProfile?id=${this.id || this.props.params.id}`)
         .then((resp) => {
-            console.log(resp.data);
             if (resp.data.redirect) {
                 return browserHistory.push('/');
             } else if(!resp.data.success){
-                console.log("where are at the good place!");
-                console.log(resp.data.message, "message");
                 this.setState({message : resp.data.message})
             } else {
-                console.log("ici", resp.data);
                 this.setState(resp.data)
             }
         })
@@ -45,27 +41,21 @@ export default class OPProfile extends React.Component {
     }
 
     handleFriendship(e){
-        console.log(this.state.toUpdate, "toupdatewheniclick");
-        console.log("click", this.state);
 
         if (this.state.usersNotFriends) {
-            console.log("PENDING");
             axios
             .post(`/setFriendShipStatus?friendShipStatus=pending&OPId=${this.props.params.id}&toUpdate=${this.state.toUpdate}`)
             .then((resp) => {
                 this.setState(resp.data)
             })
         }   else if(this.state.hasToConfirm){
-            console.log("CONFIRMED");
             axios
             .post(`/setFriendShipStatus?friendShipStatus=confirmed&OPId=${this.props.params.id}`)
             .then((resp) => {
-                console.log('here ?');
                 this.setState(resp.data)
 
             })
         }else if(this.state.UnfriendConfirmation){
-            console.log("UNDFRIEND !!!");
             axios
             .post(`/setFriendShipStatus?friendShipStatus=terminated&OPId=${this.props.params.id}`)
             .then((resp) => {
@@ -83,7 +73,6 @@ export default class OPProfile extends React.Component {
     }
 
     handleUnfriending(e){
-        console.log(this.state);
         this.setState({
             UnfriendConfirmation : true,
             friendShipCreated : false
@@ -98,7 +87,6 @@ export default class OPProfile extends React.Component {
     }
 
     render(){
-        console.log(this.state, 'state');
         let bio = "";
         if(!this.state.bio){
             if(!this.props.bio){
@@ -109,31 +97,29 @@ export default class OPProfile extends React.Component {
         }
         let status = "";
         if(this.state.usersNotFriends){
-                status = <input type="button" onClick={this.handleFriendship.bind(this)} value="Make Friend Request" />
+                status = <div id="OP-friending"> <input type="button" id="friend-button"  onClick={this.handleFriendship.bind(this)} value="Make Friend Request" /></div>
         }else if(this.state.waitForConfirmation){
-            status = <div>
-            <input type="button" onClick={this.handleCancelFriendship.bind(this)} value="Cancel Friend Request" />
-            <p>Request Sent</p>
+            status = <div id="OP-friending">
+            <input type="button" id="friend-button" onClick={this.handleCancelFriendship.bind(this)} value="Cancel Friend Request" />
             </div>
         }else if(this.state.hasToConfirm){
             status = <input type="button" onClick={this.handleFriendship.bind(this)} value="Accept Friend Request" />
         }else if (this.state.friendShipCreated){
-            status = <div>
-            <p>We are friend with {this.state.last_name} {this.state.first_name}</p>
-            <input type="button" onClick={this.handleUnfriending.bind(this)} value="Unfriend" />
+            status = <div id="OP-friending">
+            <p>You are friend with {this.state.last_name} {this.state.first_name}</p>
+            <input id="friend-button" type="button" onClick={this.handleUnfriending.bind(this)} value="Unfriend" />
             </div>
         }else if(this.state.UnfriendConfirmation){
-            status = <div>
+            status = <div id="OP-friending">
             <p>Are you sure ?</p>
-            <input type="button" onClick={this.handleFriendship.bind(this)} value="Yes" />
-            <input type="button" onClick={this.handleCancelUnfriending.bind(this)} value="No" />
+            <input id="friend-button" type="button" onClick={this.handleFriendship.bind(this)} value="Yes" />
+            <input id="friend-button" type="button" onClick={this.handleCancelUnfriending.bind(this)} value="No" />
             </div>
         }
 
 
         let errorMessage = "";
         if (this.state.error) {
-            console.log(this.state.message);
             errorMessage = <div className="error-message">
             <p>{this.state.message}</p>
             <img src="https://media.giphy.com/media/l0K4p6SITMK3fBQWY/giphy.gif"/></div>

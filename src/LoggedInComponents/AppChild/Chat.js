@@ -38,9 +38,6 @@ export default class Chat extends React.Component{
     handleSubmit(e){
         let that = this;
         let messageInfo;
-        if (e.target.value == "") {
-            return console.log("nothing!");
-        }
         if (e.key =="Enter") {
 
             let messageContent = e.target.value
@@ -62,18 +59,19 @@ export default class Chat extends React.Component{
     render(){
 
         var messageInfo="";
-        console.log(this.state.messageInfo);
 
         if(this.state.messageInfo){
             messageInfo = this.state.messageInfo.map(function(cmt){
                 return (
-                    <div>
-                    <div className="message-request">
-                    <img className="message-image" src={cmt.image}/>
-                    <p className="message-name"><Link to={cmt.userUrl}>{cmt.first} {cmt.last}</Link></p>
+                    <div className="message-container">
+                    <div id="name-date-container">
+                    <p className="message-name"><Link to={cmt.userUrl}>- {cmt.first} {cmt.last} -</Link></p>
                     <p className="message-date">{cmt.date}</p>
                     </div>
+                    <div className="message-request">
+                    <img className="message-image" src={cmt.image}/>
                     <p className="message-content">{cmt.messageContent}</p>
+                    </div>
                     </div>
                 )
             })

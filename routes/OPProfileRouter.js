@@ -76,7 +76,7 @@ router.route('/resultsSearchInput')
             results.forEach(function(user){
                 user.image = `https://s3.amazonaws.com/social-net/${user.image}`;
                 var userUrl = "";
-                userUrl =  `user/${user.id}`;
+                userUrl =  `../user/${user.id}`;
                 user["userUrl"] = userUrl;
             })
             return res.json({

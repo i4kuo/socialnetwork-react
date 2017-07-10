@@ -49,7 +49,7 @@ router.route('/logInUser')
                 }
             })
             .catch(function(err){
-                console.log("this is here", err);
+                console.log(err);
             })
         })
         .catch(function(err){

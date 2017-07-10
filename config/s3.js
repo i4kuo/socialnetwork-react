@@ -15,8 +15,6 @@ const client = knox.createClient({
     bucket: 'social-net'
 });
 
-imageUrl = `https://jhdfsjkhfsdkjfdsjkhsdf +result['image_url']`
-
 
 
 function toS3(req, res, next){
@@ -26,11 +24,9 @@ function toS3(req, res, next){
         'x-amz-acl': 'public-read'
     });
     const readStream = fs.createReadStream(req.file.path);
-    console.log("path", req.file.path);
     readStream.pipe(s3Request);
 
     s3Request.on('response', s3Response => {
-        console.log("s3response",s3Response.statusCode);
         const wasSuccessful = s3Response.statusCode == 200;
         if (wasSuccessful) {
             next();

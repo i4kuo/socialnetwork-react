@@ -158,7 +158,6 @@ function CreateFriendShip(userId, OPId, status){
 
 function UpdateFriendShip(userId, OPId, status){
     return new Promise(function(resolve, reject){
-        console.log(status);
         var oldstatus = ""
         if (status == "canceled" || status =="confirmed" || status =="rejected") {
             oldstatus = "pending"
@@ -176,7 +175,6 @@ function UpdateFriendShip(userId, OPId, status){
         RETURNING * ;`
 
         const params = [userId, OPId , status, oldstatus ];
-        console.log(params, "params");
 
         return db.query(q, params).then(function(results){
             resolve(results.rows[0]);
@@ -241,10 +239,8 @@ function getOnlineUsers(usersId){
 
 
 function checkSearchInput(inputText){
-    console.log("coucou?");
 
     var text = "%" + inputText + "%";
-    console.log(text);
 
 
     const q = `SELECT *
@@ -252,7 +248,6 @@ function checkSearchInput(inputText){
     WHERE (users.last_name ILIKE $1) OR (users.first_name ILIKE $1);`
 
     const params = [text];
-    //console.log(params);
 
     return db.query(q, params).then(function(results){
         return results.rows;

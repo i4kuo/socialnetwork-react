@@ -14,7 +14,6 @@ export default class Profile extends React.Component {
     }
 
     componentDidMount(){
-        console.log("cela se monte!");
             axios
             .get('/getUserFriends')
             .then((resp) => {
@@ -23,7 +22,6 @@ export default class Profile extends React.Component {
     }
 
     handleFriendship(e){
-        console.log(e.target.id);
         axios
         .post(`/setFriendShipStatus?friendShipStatus=confirmed&OPId=${e.target.id}`)
         .then((resp) => {
@@ -42,7 +40,6 @@ export default class Profile extends React.Component {
 
 
     render(){
-        console.log(this.state, "this is da state!");
 
         var waitingForAnwser = "";
         var frToAccept = "";
@@ -53,7 +50,11 @@ export default class Profile extends React.Component {
 
         var self = this;
 
-
+        if(this.state.WaitingForAnwser && this.state.friendShipToAccept && this.state.friendShipconfirmed){
+            if (this.state.WaitingForAnwser.length == 0 && this.state.friendShipToAccept == 0 && this.state.friendShipconfirmed == 0) {
+                waitingForAnwserTitle = <h4 id="fr-title">You don't have friends yet...</h4>
+            }
+        }
         if (this.state.WaitingForAnwser) {
             if (this.state.WaitingForAnwser.length > 0) {
                 waitingForAnwserTitle = <h4 id="fr-title">Waiting for Answer</h4>
@@ -63,7 +64,7 @@ export default class Profile extends React.Component {
                     <div className="friend-request">
                         <img className="friend-image" src={fr.image}/>
                         <p className="friend-name"><Link to={fr.userUrl}>{fr.first_name} {fr.last_name}</Link></p>
-                        <button onClick={self.handleCancelFriendship} className="cancel-button" id={fr.id}>Cancel Friend Request</button>
+                        <button id="friend-button" onClick={self.handleCancelFriendship} className="cancel-button" id={fr.id}>Cancel Friend Request</button>
                     </div>
                 )
             })
@@ -77,7 +78,7 @@ export default class Profile extends React.Component {
                     <div className="friend-request">
                         <img className="friend-image" src={fr.image}/>
                         <p className="friend-name"><Link to={fr.userUrl}>{fr.first_name} {fr.last_name}</Link></p>
-                        <button onClick={this.handleFriendship} className="accept-button" id={fr.id}>Accept Friend Request</button>
+                        <button id="friend-button" onClick={this.handleFriendship} className="accept-button" id={fr.id}>Accept Friend Request</button>
                     </div>
                 )
             })

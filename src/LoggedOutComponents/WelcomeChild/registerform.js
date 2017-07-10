@@ -56,16 +56,7 @@ export default class Registration extends React.Component {
         return (
 
             <div>
-            <div id="presentation-text">
-            <p>Join Wasabian, the new social network for programer and coders.</p>
-            <p>With Wasabian, you can :</p>
-            <ul>
-            <li>Share you skills</li>
-            <li>Meet new coders of your city</li>
-            <li>Ask questions</li>
-            <li>Chat with friends!</li>
-            </ul>
-            </div>
+
 
             <div className="form-container">
             <div className="register">

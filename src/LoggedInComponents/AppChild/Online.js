@@ -19,11 +19,8 @@ export default class Online extends React.Component {
     }
 
     componentDidMount(){
-        console.log("componentDidMount");
-        console.log(socket, "socket componentDidMount");
         this.getOnlineUsers();
         socket.on('OnlineUserChange', () => {
-            console.log("NEW USER ONLINE");
             this.getOnlineUsers()
         })
     }
@@ -32,7 +29,6 @@ export default class Online extends React.Component {
         axios
         .get('/getOnlineUsers')
         .then((resp) => {
-            console.log(resp.data.users, "component did mount, list of online users");
             this.setState({users : resp.data.users});
 
         });
@@ -40,9 +36,8 @@ export default class Online extends React.Component {
 
     renderOnlineUsers(){
         return this.state.users.map(function(user){
-            console.log(user.image);
             return (
-                <div className="friend-request">
+                <div>
                     <img id="online-icon" src="/online.svg"/>
                     <img className="friend-image" src={user.image}/>
                     <p className="friend-name"><Link to={user.userUrl}>{user.first_name} {user.last_name}</Link></p>

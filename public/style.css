@@ -4,12 +4,26 @@ html, body{
     min-height: 120%;
 }
 
+textarea{
+    border: 1px black solid;
+}
+
 #title {
     font-family: 'Permanent Marker', cursive;
+    color: white;
 }
 
 #sub-title {
     font-family: 'Coming Soon', cursive;
+    color: white;
+}
+
+#welcome-background{
+    position: absolute;
+    width: 100vw;
+    height: 147%;
+    background: rgb(70, 172, 138);
+    /*color: rgb(111, 201, 128)*/
 }
 
 .form-container  {
@@ -17,7 +31,8 @@ html, body{
     left: 50%;
     transform: translate(-50%, 0);
     text-align: center;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Quicksand', cursive;
+    color: white;
 }
 
 .form-container p{
@@ -29,9 +44,7 @@ html, body{
 
 
 body {
-    background: #CC95C0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #7AA1D2, #DBD4B4, #CC95C0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: whitesmoke;  /* fallback for old browsers */
 
 }
 
@@ -93,7 +106,7 @@ body {
 }
 
 #li-container li a{
-    font-family: 'Poiret One', cursive;
+    font-family: 'Quicksand', cursive;
     text-decoration: none;
     color: black;
     font-size: 18px
@@ -112,7 +125,7 @@ body {
     right: 0;
     /* color: aquamarine; */
     left: 0;
-    background: white;
+    background: rgb(70, 172, 138);
     opacity: 0.9;
     display: flex;
 }
@@ -125,12 +138,14 @@ body {
 
 .menu-link{
     margin: 22px;
-    font-family: 'Poiret One', cursive;
-    color: black;
+    font-family: 'Quicksand', cursive;
+    color: white;
+    text-decoration: none;
 }
 
 .menu-link:hover{
-    color : green
+    color : black;
+    text-decoration: underline;
 }
 
 
@@ -146,7 +161,7 @@ body {
 }
 
 #big-logo #title {
-    color : black;
+    color : white;
     font-size : 70px;
     margin-top: 0;
 }
@@ -157,43 +172,43 @@ body {
 }
 
 #big-logo #sub-title {
-    color :black;
+    color :white;
     font-size : 35px;
 }
 
+#advert{
+    margin-top: 27px;
+}
 
-#presentation-text {
-    font-family: 'Poiret One', cursive;
+
+/*#presentation-text {
+    font-family: 'Quicksand', cursive;
     text-align: center;
     position: relative;
     background : white;
     font-weight: 600;
     padding: 15px;
     font-size: 20px;
-}
+}*/
 
 
-#presentation-text ul {
+/*#presentation-text ul {
     list-style-type: none;
     padding: 0;
 }
 #presentation-text ul li{
     list-style-type: none;
     text-align: center;
-}
+}*/
 
 /*tiny logo page*/
 
-#tiny-logo .logo-container{
-    position: fixed;
-    top: 0;
-}
 
 #wrap-profilepic-profilemenu{
     position: absolute;
     z-index: 2;
     top: 5px;
-    left: 81%;
+    right: 14%;
 }
 
 #profile-menu {
@@ -204,7 +219,7 @@ body {
     margin-top: 10px;
     width: 110px;
     top: 49px;
-    right: -78%;
+    right: 10%;
     position: absolute;
 }
 
@@ -223,11 +238,20 @@ body {
     height: 0;
     position: relative;
     top: -10px;
-    left: 15px;
+    left: 65px;;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid black;
     border-radius: 2px;
+}
+
+
+#friend-button{
+    border: 1px solid black;
+    background: white;
+    font-family: helvetica;
+    padding: 6px;
+    border-radius: 3px;
 }
 
 
@@ -244,7 +268,7 @@ body {
 #profile-picture {
     position: absolute;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 #upload-profile-picture {
@@ -253,12 +277,13 @@ body {
     text-align: center;
     right: -50%;
     transform: translate(-50%);
-    font-family: 'Poiret One', cursive;
+    font-family: 'Quicksand', cursive;
     width: 48px;
     overflow: hidden;
     height: 48px;
     margin: 0;
-    top: 4px;
+    top: 11px;
+    font-size: 10px;
 }
 
 #input-file {
@@ -284,7 +309,7 @@ body {
     position: relative;
     text-align: center;
     top: 79px;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Quicksand', cursive;
     padding-top: 10px;
     border-top: 1px black solid;
     width : 300px;;
@@ -331,7 +356,7 @@ body {
 
 
 #profile-pic-upload {
-    font-family: 'Poiret One', cursive;
+    font-family: 'Quicksand', cursive;
     background: white;
     position: absolute;
     z-index: 10000;
@@ -362,16 +387,16 @@ body {
 
 .profile-menu-link {
     font-size: 15px;
-    font-family: 'Poiret One', cursive;
-    text-decoration: underline;
+    font-family: 'Quicksand', cursive;
     color:black;
     margin-top: 5px;
     margin-bottom: 5px;
+    text-decoration: none;
 }
 
 .profile-menu-link:hover{
-    background: rgb(167, 198, 145);
-    color : black;
+    color : rgb(70, 172, 138);
+    text-decoration: underline;
 }
 
 #tiny-logo #title { order: 2; }
@@ -379,7 +404,7 @@ body {
 #tiny-logo #sub-title { order: 3; }
 
 #tiny-logo #title {
-    position: fixed;
+    position: absolute;
     font-family: 'Permanent Marker', cursive;
     font-size: 16px;
     right: 3%;
@@ -388,7 +413,7 @@ body {
 }
 
 #tiny-logo #sub-title {
-    position: fixed;
+    position: absolute;
     font-family: 'Coming Soon', cursive;
     font-size: 12px;
     right: 3%;
@@ -396,10 +421,10 @@ body {
 }
 
 #tiny-logo #logo-image{
-    position: fixed;
+    position: absolute;
     width: 35px;
     top: 12px;
-    left: 3%;
+    left: 24px;
 }
 
 
@@ -419,28 +444,26 @@ body {
 #profile-page-container #image {
     position: relative;
     max-width: 25%;
-    min-width: 230px;
+    min-width: 200px;
     float: left;
 }
 
 #profile-page-container #bio {
     float: left;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Quicksand', cursive;
     display: inline-block;
-    margin-left: 20px;
-
 }
 
 #profile-page-container #bio a{
-    display: block;
     margin-top: 16px;
+    display: block;
+    margin-left: 18px;
 }
 
-#profile-page-container #name {
-    font-family: 'Poiret One', cursive;
-    display: inline-block;
-    margin-left: 15px;
 
+#profile-page-container input:hover {
+    color: white;
+    background: black;
 }
 
 #profile-page-container #textarea-bio {
@@ -456,7 +479,7 @@ body {
 
 
 #profile-page-container #button:hover {
-    background: green;
+    background: rgb(70, 172, 138);
     color:white;
 }
 
@@ -477,14 +500,14 @@ body {
 #profile-page-container #image-container {
     position: relative;
     max-width: 25%;
-    min-width: 230px;
+    min-width: 200px;
     float: left;
 
 }
 #profile-page-container #image-overlay {
     position: relative;
     max-width: 25%;
-    min-width: 230px;
+    min-width: 200px;
     float: left;
 
 }
@@ -496,10 +519,10 @@ body {
 
 #image-container #upload-text {
     position: absolute;
-    top: 82px;
+    top: 68px;
     left: 50%;
     transform: translate(-50%);
-    font-family: 'Poiret One', cursive;
+    font-family: 'Quicksand', cursive;
     display: none;
 }
 
@@ -515,7 +538,7 @@ body {
     display: inline-block;
     text-align: center;
     font-size: 30px;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Quicksand', cursive;
 }
 
 
@@ -523,18 +546,19 @@ body {
 
 #waitingForAnwser-container, #frToAccept-container, #frConfirmed-container{
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: space-around;
     position: relative;
-    left: -5%;
 }
 
 .friend-request {
-    margin-left: 10%;
+    text-align: center;
+    height: 195px;
+    margin-bottom: 100px;
 }
 
 #fr-title{
-    font-family: 'Poiret One', cursive;
+    font-family: 'Quicksand', cursive;
     font-size: 15px;
     text-align: center;
     margin-top: 59px;
@@ -547,17 +571,15 @@ body {
 }
 
 .friend-image{
-    width: 180px;
+    height: 100%;
 }
 
 
 .accept-button, .cancel-button{
     border: 1px black solid;
-    left: 50%;
     position: relative;
     background: white;
-    transform: translate(-50%);
-    font-family: 'Poiret One', cursive;
+    font-family: 'Quicksand', cursive;
 }
 
 .accept-button:hover, .cancel-button:hover{
@@ -566,9 +588,12 @@ body {
 }
 
 .friend-name{
+    left: 50%;
     text-align: center;
-    margin: 7px;
-    font-family: 'Poiret One', cursive
+    margin-top: 7px;
+    font-family: 'Quicksand', cursive;
+    position: relative;
+    transform: translate(-50%);
 }
 
 /*Online page*/
@@ -577,14 +602,34 @@ body {
     position: relative;
     top: 102px;
     display: flex;
+    align-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-around;;
+}
+
+#online-page div {
+    height: 193px;
+    margin : 30px;
 }
 
 #online-icon{
-    position: relative;
+    position: absolute;
     width: 21px;
-    top: -152px;
-    right: -28px;
+    margin: 5px;
+}
+
+#bio #button, #submit-yes-button, #submit-no-button{
+    text-align: center;
+    border: 1px black solid;
+    border-radius: 2px;
+    background: white;
+    color: black;
+    font-family: helvetica;
+    text-decoration: none;
+}
+
+#bio #button {
+    padding: 6px;
 }
 
 
@@ -592,7 +637,7 @@ body {
 /*This are the search results*/
 #nav-bar-results-container{
 
-    left: 50%;
+    left: 32%;
     background: white;
     border: black 1px solid;
     transform: translate(-50%);
@@ -606,24 +651,42 @@ body {
     top: 50px;
 }
 
+#nav-bar-results-responsive-container{
+    left: 50%;
+    background: white;
+    border: black 1px solid;
+    transform: translate(-50%);
+    width: 203px;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 30px;
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+    top: 130px;
+}
+
 .search-results-container .search-image{
     width: 38px;
     top: 65px;
-    margin: 6px 8px 0px 6px;
 }
 
 .search-results-container  .search-name{
-    font-family: 'Poiret One', cursive;
+    font-family: 'Quicksand', cursive;
     margin-left: 12px;
+    margin: 8px;
+    font-family: 'Quicksand', cursive;
+    width: 150px;
 }
 
 .search-results-container{
     display: -webkit-inline-box;
-    width: 203px;
+    width: 193px;
+    margin :10px 0px 10px 10px;
 }
 
 .search-message{
-    font-family: 'Poiret One', cursive;
+    font-family: 'Quicksand', cursive;
     position: relative;
     text-align: center;
     left: 50%;
@@ -646,50 +709,66 @@ body {
 
 #chat-container {
     position: relative;
-    top: 100px;
+    top: 54px;
     background: white;
-    border: 1px dotted green;
+    border: 1px dotted rgb(70, 172, 138);
     width: 80%;
     left: 10%;
 }
 
 #text-container {
-    top: -9px;
+    align-self: center;
+    margin: 20px;
     position: relative;
     width: 83%;
     height: 95px;
+    border: 1px solid black;
 }
 
 #message-container{
-    height: 500px;
+    height: 75vh;
     overflow: scroll;
 }
 
 .message-request{
+    align-content: center;
     display: flex;
     margin: 10px;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Quicksand', cursive;
+    flex-flow: row wrap;
 }
 
 .message-image{
-    width: 62px;
-    min-height: 62px;
+    align-self: flex-end;
+    border: 1px dotted rgb(70, 172, 138);
+    width: 45px;
+    min-height: 45px;
     height: 100%;
+    border-radius: 100%;
 }
 
 .message-content{
+    margin: 0 0 0 31px;
     position: relative;
-    left: 90px;
-    top: -50px;
     font-family: helvetica;
-    width: 84%;
+    max-width: 372px;
+    width: 65%;
     text-align: justify;
+    background: rgb(70, 172, 138);
+    padding: 15px;
+    border-radius: 25px;
+    color: white;
 }
 
 .message-date, .message-name{
+    font-family: 'Quicksand', cursive;
     position: relative;
-    top:-17px;
-    margin-left: 10px;
+    margin: 2px 0 7px 10px;
+}
+
+.message-name{
+    font-style: italic;
+    font-weight: bold;
 }
 
 
@@ -702,17 +781,263 @@ body {
 #comment-container {
     background: white;
     position: relative;
-    top: 112px;
+    top: 68px;
     width: 80%;
     left: 10%;
     border: 1px black dotted;
+    display: flex;
+}
+
+#name-date-container{
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 #user-image{
-    left: 2px;
+    /*left: 2px;
     top: 2px;
     height: 101px;
     margin: 10px;
     /* position: relative; */
+    /*position: relative;*/
+    width: 110px;
+    align-self: center;
+    margin-left: 20px;
+}
+
+
+#hamburger-menu img{
+    display: none;
+    z-index: 100000000;
+    color: black;
     position: relative;
+    width: 36px;
+    left: 50%;
+    top: 5px;
+    transform: translate(-50%);
+}
+
+#menu-responsive{
+    display: flex;
+    flex-flow: column;
+}
+
+#menu-responsive-container{
+    flex-flow: column;
+    align-items: center;
+    top: 20px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 68px;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+
+#menu-responsive-overlay{
+    position: absolute;
+    background: black;
+    width: 100%;
+    top : -6px;
+    bottom : -30px;
+}
+
+
+#search-responsive-input{
+    z-index: 1;
+    padding-top: 30px;
+}
+
+#profile-page-container div{
+    font-family: 'Quattrocento Sans', sans-serif;
+    position: relative;
+}
+
+#search-responsive-input input{
+    text-align: center;
+    position: relative;
+    width: 200px;
+    height: 24px;
+    border: 1px black solid;
+}
+
+#menu-responsive{
+    z-index: 1;
+}
+
+#responsive-cross{
+    position: absolute;
+    width: 20px;
+    right: 20px;
+    top: 20px;
+    height: auto;
+}
+
+.menu-responsive-link{
+    text-decoration: none;
+    font-size: 25px;
+    margin: 30px;
+    color : white;
+    font-family: 'Quattrocento Sans', sans-serif;
+    text-align: center;
+}
+
+.menu-responsive-link:hover{
+    color: rgb(70, 172, 138);
+}
+
+#button {
+    color: white;
+    border: 1px solid white;
+    background: none;
+}
+
+.message-container:first-child{
+    margin-top : 10px;
+}
+
+.message-container{
+    margin: 50px 0 50px 0;
+}
+
+#profile-page-container #name {
+    margin-left: 22px;
+    font-family: 'Quicksand', cursive;
+    display: inline-block;
+}
+
+
+
+
+
+@media all and (max-width: 680px) and (min-width: 300px) {
+
+    #comment-container{
+        flex-flow: column wrap;
+    }
+    #user-image{
+        border: 1px black solid;
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+}
+
+#OP-friending{
+    position: relative;
+    left: 22px;
+}
+
+@media all and (max-width: 860px) and (min-width: 10px) {
+    #menu, #search-input{
+        display: none;
+    }
+    #hamburger-menu img{
+        display : inline;
+    }
+    #title, #sub-title{
+        left: 68px;
+    }
+    #profile-picture-container{
+        right : 0%;
+    }
+    #nav-bar-results-container{
+        top: 132px;
+    }
+    #wrap-profilepic-profilemenu{
+        right: 25px;
+    }
+    #user-image{
+        width: 70px;
+    }
+    #profile-page-container{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 66px;
+        padding: 0;
+        border : none;
+    }
+
+    #profile-page-container div{
+        left: 0;
+        text-align: center;
+    }
+
+
+    #name{
+        margin-left: 0;
+        margin-top: 6px;
+    }
+
+    #bio #button {
+        padding: 6px;
+    }
+    #bio #button:hover, #submit-yes-button:hover, #submit-no-button:hover{
+        color : white;
+        background: black;
+    }
+
+    #profile-page-container #name {
+        margin-left: 0px;
+        text-align: center;
+        font-family: 'Quicksand', cursive;
+    }
+
+    #profile-menu{
+        right: -23%;
+    }
+
+    #profile-page-container #bio, #image-container #name{
+        margin-left: 0;
+    }
+
+    #OP-friending{
+        left: 0;
+    }
+
+    #profile-page-container #bio a{
+        margin-left: 0;
+    }
+
+}
+
+@media all and (max-width: 460px) and (min-width: 10px) {
+    #tiny-logo #title, #tiny-logo #sub-title{
+        display: none;
+    }
+    /*#welcome-background{
+        height: 100vh;
+    }*/
+    #user-image{
+        display: none;
+    }
+    .message-content{
+        margin: 0 0 0 12px;
+        width: 57%;
+    }
+
+    .message-image{
+        width: 30px;
+        min-height: 30px;
+    }
+
+    #text-container{
+        height: 64px;
+    }
+
+    #chat-container{
+        font-size: 12px;
+    }
+    #profile-page-container #textarea-bio{
+        display: inline-block;
+        width: 100%;
+        margin-left: 0;
+    }
+    #bio-field{
+        width: 98%;
+    }
 }

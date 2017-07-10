@@ -82,7 +82,7 @@ app.get('/getOnlineUsers', function(req, res){
         })
     })
     .catch((err) => {
-        console.log("ici !, error!", err);
+        console.log(err);
     })
 
 })

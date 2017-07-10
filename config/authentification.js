@@ -23,7 +23,6 @@ function checkPassword(textEnteredInLoginForm, hashedPasswordFromDatabase, callb
             if (err) {
                 return callback(err);
             }
-            console.log(doesMatch);
             callback(null, doesMatch);
         });
     })
